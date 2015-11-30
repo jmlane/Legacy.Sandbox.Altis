@@ -1,0 +1,10 @@
+if !(isServer) exitWith {};
+clearmagazinecargoglobal _this;
+clearweaponcargoglobal _this;
+clearitemcargoglobal _this;
+clearbackpackcargoglobal _this;
+_this allowDamage false;
+sleep 5;
+if(!((profileNameSpace getVariable ["#AUSMD#Boxes",[]]) isEqualTo [])) exitWith {};
+_this addbackpackcargoglobal ["I_Mortar_01_support_F", 2];
+_this addbackpackcargoglobal ["I_Mortar_01_weapon_F", 2];

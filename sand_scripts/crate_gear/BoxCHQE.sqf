@@ -1,0 +1,15 @@
+if !(isServer) exitWith {};
+clearmagazinecargoglobal _this;
+clearweaponcargoglobal _this;
+clearitemcargoglobal _this;
+clearbackpackcargoglobal _this;
+_this allowDamage false;
+sleep 5;
+if(!((profileNameSpace getVariable ["#AUSMD#Boxes",[]]) isEqualTo [])) exitWith {};
+_this addbackpackcargoglobal ["B_AssaultPack_rgr", 6];
+_this additemcargoglobal ["U_BG_Guerrilla_6_1", 6];
+_this addbackpackcargoglobal ["B_Kitbag_cbr", 6];
+_this additemcargoglobal ["MineDetector", 2];
+_this additemcargoglobal ["Medikit", 2];
+_this additemcargoglobal ["B_UavTerminal", 1];
+_this addbackpackcargoglobal ["B_UAV_01_backpack_F", 1];

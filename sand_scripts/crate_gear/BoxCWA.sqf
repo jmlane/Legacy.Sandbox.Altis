@@ -1,0 +1,10 @@
+if !(isServer) exitWith {};
+clearmagazinecargoglobal _this;
+clearweaponcargoglobal _this;
+clearitemcargoglobal _this;
+_this allowDamage false;
+sleep 5;
+if(!((profileNameSpace getVariable ["#AUSMD#Boxes",[]]) isEqualTo [])) exitWith {};
+_this addmagazinecargoglobal ["30Rnd_65x39_caseless_mag", 200];
+_this addmagazinecargoglobal ["130Rnd_338_Mag", 50];
+_this addmagazinecargoglobal ["10Rnd_338_Mag", 100];

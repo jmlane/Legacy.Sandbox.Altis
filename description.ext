@@ -1,0 +1,167 @@
+author = "Alphapan, AustinXmedic, and Moses";
+onLoadName = "Athena Security Group";
+onLoadMission = Support the server at AthenaSecurityGroup.com;
+disabledAI=1;
+disableChannels[]={0,2,4,6};
+debriefing=1;
+enableDebugConsole = 1;
+forceRotorLibSimulation = 1;
+
+class Header
+{
+	gameType = Sandbox;
+	minplayers = 1;
+	maxPlayers = 100;
+};
+
+respawn = 3;
+respawndelay = 5;
+respawnTemplates[] = {"Revive", "MenuPosition"};
+respawndialog = false;
+respawnOnStart = -1;
+reviveDelay = 60;
+reviveBleedOutDelay = 600;
+
+class CfgFunctions
+{
+	class AUSMD
+	{
+		class unitInteraction
+		{
+			file = "functions";
+			class surrender {};
+			class arrested {};
+			class moveCaptive {};
+			class directionText {};
+			class interrogate {};
+			class interrogateEnemy {};
+			class convoy {};
+			class createGroup {};
+			class findLoc {};
+			class animation {};
+			class fuelDepot {};
+			class missionLoad {};
+			class missionAccept {};
+			class enemyFort {};
+			class mineClearing {};
+			class powerStation {};
+			class radioTower {};
+			class foodWaterMeds {};
+			class spawnGroup {};
+			class Patrol {};
+			class hostileSaying {};
+			class hintt {};
+			class globalMessage {};
+			class talkCopGoods {};
+			class stolenGoods {};
+			class militaBaseSetup {};
+			class patrolBases {};
+			class groupsInCache {};
+			class enemyTown {};
+			class removePatrolBase {};
+			class platoonMembership {};
+			class passwordCorrect {};
+			class populateTown {};
+			class teleport {};
+			class lockUnlock {};
+			class adminPanelLoad {};
+			class moveIntoHouse {};
+			class addRep {};
+			class megaAttack {};
+			class groupCountCheck {};
+			class spawnArmor {};
+			class PBAddLoad {};
+			class removeBaseLoad {};
+			class securityPatrol {};
+			class handleDamage {};
+			class impactEffect {};
+			class buildingEnterable {};
+		};
+		class BankFunctionality
+		{
+			file = "bankFunctions";
+			class supplyBoxSell {};
+			class supplyBoxPurchase {};
+			class DialogBuy {};
+			class PurchaseLoad {};
+			class PurchaseLoadVeh {};
+			class sellVehicle {};
+			class PurchaseVehicle {};
+		};
+		class townFunctionality
+		{
+			file = "townFunctions";
+			class nearUnits {};
+			class nearUnitsBool {};
+			class findNearestTileF {};
+			class findNearestTileE {};
+			class updateTileStatus {};
+		};
+		class logisticsStuff
+		{
+			file = "logisticsFunctions";
+			class loadObject {};
+			class unloadObject {};
+			class vehicleInventoryLoad {};
+			class buttonText {};
+			class constructionDialog {};
+			class constructionMove {};
+			class constructionPurchase {};
+			class constructionRemove {};
+			class constructionSnap {};
+			class snapCalc {};
+			class selectObject {};
+		};
+	};
+	class KK
+	{
+		class GeneralFunctions
+		{
+			file = "functions";
+			class findAll {};
+			class findAllGetPath {};
+		};
+	};
+};
+
+class CfgSounds {
+	sounds[] = {};
+	class radio_start
+	{
+		name = "Radio begin broadcast sound";
+		sound[] = {"sounds\radio\start.ogg",0.4,1};
+		titles[] = {0,""};
+	};
+	class radio_end
+	{
+		name = "Radio end broadcast sound";
+		sound[] = {"sounds\radio\end.ogg",0.4,1};
+		titles[] = {0,""};
+	};
+};
+
+class CfgCommunicationMenu {
+	class disconnectChannel
+	{
+		text = "Leave Radio Net"; // Text displayed in the menu and in a notification
+        submenu = ""; // Submenu opened upon activation (expression is ignored when submenu is not empty.)
+        expression = "_this execVM 'sand_scripts\sand_radio_callDisconnect.sqf';"; 
+        icon = "\a3\Ui_f\data\GUI\Cfg\CommunicationMenu\call_ca.paa"; // Icon displayed permanently next to the command menu
+        cursor = "\a3\Ui_f\data\IGUI\Cfg\Cursors\iconCursorSupport_ca.paa"; // Custom cursor displayed when the item is selected
+        enable = "1"; // Simple expression condition for enabling the item
+        removeAfterExpressionCall = 1; // 1 to remove the item after calling
+	};
+};
+
+#include "defines.hpp"
+#include "dialogs.hpp"
+#include "dialog.hpp"
+#include "purchase.hpp"
+#include "missions.hpp"
+#include "adminPanel.hpp"
+#include "patrolBases.hpp"
+#include "vehicleInv.hpp"
+#include "construction.hpp"
+#include "outlw_magRepack\MagRepack_config.hpp"
+
+//loadScreen = "JournalUI\images\loadScreen.jpg";
