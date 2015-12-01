@@ -4,7 +4,7 @@
 // vehicle player == player && player in ([HQ4,HQ5,HQ6,OPS,PL1,PS1,PL2,PS2,PL3,PS3,WSL])
 
 if ((toUpper str player) in (["HQ4","HQ5","HQ6","OPS","PL1","PS1","PL2","PS2","PL3","PS3","WSL"])) then {
-	comm_earplugToggle = [player,"pbControl",nil,nil,""] call BIS_fnc_addCommMenuItem;	// Adds Patrol Base menu to the CommMenu.
+	comm_pbControl = [player,"pbControl",nil,nil,""] call BIS_fnc_addCommMenuItem;	// Adds Patrol Base menu to the CommMenu.
 	
 	_pb1 = ["Deploy Plt.1 Base", [2], "", -5, [["expression", "[1,getPos player] spawn AUSMD_fnc_patrolBases;"]], "1", "1", "\A3\ui_f\data\IGUI\Cfg\Cursors\iconcursorsupport_ca.paa"];
 	_pb2 = ["Deploy Plt.2 Base", [3], "", -5, [["expression", "[2,getPos player] spawn AUSMD_fnc_patrolBases;"]], "1", "1", "\A3\ui_f\data\IGUI\Cfg\Cursors\iconcursorsupport_ca.paa"];
@@ -38,4 +38,19 @@ if ((toUpper str player) in (["HQ4","HQ5","HQ6","OPS","PL1","PS1","PL2","PS2","P
 		_pb5
 	];
 	publicVariable "PB_CONTROL";
+};
+
+if ((toUpper str player) in (["HQ4","HQ5","HQ6","OPS","PL1","PS1","PL2","PS2","PL3","PS3","WSL"])) then {
+	comm_adminPanel = [player,"adminPanel",nil,nil,""] call BIS_fnc_addCommMenuItem;
+	_apOption1 = ["Admin Panel", [2], "", -5, [["expression", "createDialog 'AUSMDDebug';"]], "1", "1", ""];
+	_apOption2 = ["Tile System Off", [3], "", -5, [["expression", "disableSpawning = true;publicVariable 'disableSpawning';"]], "1", "1", ""];
+	_apOption3 = ["Tile System On", [4], "", -5, [["expression", "disableSpawning = false;publicVariable 'disableSpawning';"]], "1", "1", ""];
+	ADMIN_CONTROL = 
+	[
+		["Admin Panel",false],
+		_apOption1,
+		_apOption2,
+		_apOption3
+	];
+	publicVariable "ADMIN_CONTROL";
 };

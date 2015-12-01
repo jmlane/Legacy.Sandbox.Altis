@@ -107,6 +107,10 @@ enableSentences false;
 PB_CONTROL = [];
 publicVariable "PB_CONTROL";
 
+// for Adminpanel
+ADMIN_CONTROL = [];
+publicVariable "ADMIN_CONTROL";
+
 // disable squad Menu HUD
 showHUD [true,true,true,true,true,true,false,true];
 

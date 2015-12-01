@@ -95,6 +95,7 @@ comm_earplugToggle = [player,"earplugToggle",nil,nil,""] call BIS_fnc_addCommMen
 
 if(getPlayerUID player isEqualTo  76561198031485127 || getPlayerUID player isEqualTo 76561198076263154) then
 {
+	
 	player addAction ["Admin Menu",{createDialog "AUSMDDebug";},nil,0.4,False,True,"", ' alive player '];
 	player addAction ["TILE SYSTEM OFF",{disableSpawning = true;publicVariable "disableSpawning";},nil,0.4,False,True,"", ' alive player && !disableSpawning'];
 	player addAction ["TILE SYSTEM ON",{disableSpawning = true;publicVariable "disableSpawning";},nil,0.4,False,True,"", ' alive player && disableSpawning '];

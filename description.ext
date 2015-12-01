@@ -169,6 +169,15 @@ class CfgCommunicationMenu {
         enable = "1"; 
         removeAfterExpressionCall = 0;
 	};
+	class adminPanel
+	{
+		text = "Admin Panel";
+        submenu = "#USER:ADMIN_CONTROL";
+        expression = "";
+        cursor = ""; 
+        enable = "1"; 
+        removeAfterExpressionCall = 0;
+	};
 };
 
 #include "defines.hpp"
