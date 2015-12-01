@@ -1,6 +1,8 @@
 sleep 5;
 
 enableSentences false;
+enableRadio false;
+showHUD [true,true,true,true,true,true,false,true];
 
 myDeaths = 0;
 
@@ -62,15 +64,10 @@ player addAction["Interrogate", {
 
 //buy/sell actions
 player addAction ["Sell Vehicle",AUSMD_fnc_sellVehicle,nil,1,False,True,"",' player distance sellPad < 5 && (rank player isEqualTo "LIEUTENANT" OR rank player isEqualTo "CAPTAIN" OR rank player isEqualTo "MAJOR" OR rank player isEqualTo "COLONEL" OR player in ([OPS,PL3,PS3,RO3,CM3,RO6,CM6,HQ6,HQ5,HQ4,PL2,PS2,RO2,CM2,PL1,PS1,RO1,CM1])) '];
-
 player addAction ["Purchase Vehicle",{createDialog "PurchaseUIVeh";},nil,1.5,False,True,"",' player distance register < 5 && (rank player isEqualTo "LIEUTENANT" OR rank player isEqualTo "CAPTAIN" OR rank player isEqualTo "MAJOR" OR rank player isEqualTo "COLONEL" OR player in ([OPS,PL3,PS3,RO3,CM3,RO6,CM6,HQ6,HQ5,HQ4,PL2,PS2,RO2,CM2,PL1,PS1,RO1,CM1])) '];
-
 player addAction ["Purchase Items",{createDialog "PurchaseUI";},nil,1.5,False,True,"",' player distance register < 5 && (rank player isEqualTo "LIEUTENANT" OR rank player isEqualTo "CAPTAIN" OR rank player isEqualTo "MAJOR" OR rank player isEqualTo "COLONEL" OR player in ([OPS,PL3,PS3,RO3,CM3,RO6,CM6,HQ6,HQ5,HQ4,PL2,PS2,RO2,CM2,PL1,PS1,RO1,CM1])) '];
-
 player addAction ["Sell Items",AUSMD_fnc_supplyBoxSell,nil,1,False,True,"",' player distance register < 5 && (rank player isEqualTo "LIEUTENANT" OR rank player isEqualTo "CAPTAIN" OR rank player isEqualTo "MAJOR" OR rank player isEqualTo "COLONEL" OR player in ([OPS,PL3,PS3,RO3,CM3,RO6,CM6,HQ6,HQ5,HQ4,PL2,PS2,RO2,CM2,PL1,PS1,RO1,CM1])) '];
-
 player addAction ["Company Bank",{hint format ["Company Bank: %1",GV_Sand_Balance];},nil,0.8,False,True,"",' player distance register < 5 '];
-
 player addAction ["Jobs",{createDialog "AUSMDMissions"},nil,1.2,False,True,"",' player distance register < 5 && (rank player isEqualTo "LIEUTENANT" OR rank player isEqualTo "CAPTAIN" OR rank player isEqualTo "MAJOR" OR rank player isEqualTo "COLONEL" OR player in ([OPS,PL3,PS3,RO3,CM3,RO6,CM6,HQ6,HQ5,HQ4,PL2,PS2,RO2,CM2,PL1,PS1,RO1,CM1])) '];
 
 // old patrol bases -- now moved to commMenu

@@ -100,6 +100,8 @@ platoon3Holders = [h14,h15,h16,h17,h18,h19];
 {_x disableTIequipment true;} forEach (allMissionObjects "All");
 enableEngineArtillery false;
 enableSaving [false,false];
+enableRadio false;
+enableSentences false;
 
 // for patrolBase commMenu.
 PB_CONTROL = [];

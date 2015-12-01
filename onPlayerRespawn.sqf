@@ -3,6 +3,9 @@ waitUntil {time > 5 && !isNil "GV_Sand_Balance"};
 [player] execVM "sand_scripts\sand_lockBoxes.sqf";
 
 player forceWalk false;
+enableSentences false;
+enableRadio false;
+showHUD [true,true,true,true,true,true,false,true];
 
 if(time > 30 && player distance (getMarkerPos "Respawn_West") < 100 && myDeaths > 3) then
 {
