@@ -151,6 +151,15 @@ class CfgCommunicationMenu {
         enable = "1"; // Simple expression condition for enabling the item
         removeAfterExpressionCall = 1; // 1 to remove the item after calling
 	};
+	class earplugToggle
+	{
+		text = "Toggle Earplugs";
+        submenu = "";
+        expression = "_this execVM 'sand_scripts\sand_earplugs_commItem.sqf';";
+        cursor = "";
+        enable = "1";
+        removeAfterExpressionCall = 0;
+	};
 };
 
 #include "defines.hpp"

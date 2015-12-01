@@ -77,8 +77,10 @@ player addAction ["Jobs",{createDialog "AUSMDMissions"},nil,1.2,False,True,"",' 
 player addAction ["Build Menu",{createDialog "PatrolBaseAdd";},nil,0.5,False,True,"",' vehicle player == player && player in ([HQ4,HQ5,HQ6,OPS,PL1,PS1,PL2,PS2,PL3,PS3,WSL]) '];
 player addAction ["Remove Menu",{createDialog "patrolBaseRemove";},nil,0.5,False,True,"",' vehicle player == player && player in ([HQ4,HQ5,HQ6,OPS,PL1,PS1,PL2,PS2,PL3,PS3,WSL]) '];
 
-player addAction ["Earplugs In",{1 fadeSound .04; AUSMD_earPlugIn = true;},nil,0.6,False,True,"",' !AUSMD_earPlugIn '];
-player addAction ["Earplugs Out",{.1 fadeSound 1; AUSMD_earPlugIn = false;},nil,0.6,False,True,"",' AUSMD_earPlugIn '];
+// old earplugs -- now moved to commMenu
+// code left for legacy
+// player addAction ["Earplugs In",{1 fadeSound .04; AUSMD_earPlugIn = true;},nil,0.6,False,True,"",' !AUSMD_earPlugIn '];
+// player addAction ["Earplugs Out",{.1 fadeSound 1; AUSMD_earPlugIn = false;},nil,0.6,False,True,"",' AUSMD_earPlugIn '];
 
 AUSMD_selectedObject = auslog;
 AUSMD_selectedVehicle = auslog;
@@ -88,6 +90,9 @@ player addAction ["Select Vehicle",{[] call AUSMD_fnc_loadObject;},nil,0.35,Fals
 player addAction ["Vehicle Inventory",{createDialog "vehInventory"},nil,0.25,False,True,"",' alive player && vehicle player == player && typeOf cursorTarget in AUSMD_acceptedVehicles && player distance cursorTarget < 10'];
 player addAction ["Move Object",{[] call AUSMD_fnc_constructionMove;},nil,0.15,False,True,"",' alive player && vehicle player == player && typeOf cursorTarget in AUSMD_acceptedObjects && !construction_building'];
 player addAction ["Drop Object",{construction_object setVariable ["being_moved",false,true];detach construction_Object;construction_Building = false;construction_Object = objNull;hint "Object Placed.";player forceWalk false;},nil,0.15,False,True,"",' construction_building && alive player && vehicle player == player'];			
+
+// Add Earplug Toggle to Comm Menu
+comm_earplugToggle = [player,"earplugToggle",nil,nil,""] call BIS_fnc_addCommMenuItem;
 
 if(getPlayerUID player isEqualTo  76561198031485127 || getPlayerUID player isEqualTo 76561198076263154) then
 {

@@ -4728,7 +4728,7 @@ class Mission
 			lock="LOCKED";
 			skill=1;
 			text="BoxJump";
-			init="nul = this execVM ""sand_scripts\crate_gear\boxJump.sqf"";";
+			init="nul = this execVM ""sand_scripts\crate_gear\boxJump.sqf""; this addAction [""Jump Box"",nil,nil,6,true,true,"""",""""];";
 		};
 		class Item245
 		{
@@ -4740,7 +4740,7 @@ class Mission
 			vehicle="B_supplyCrate_F";
 			skill=0.60000002;
 			text="RS1";
-			init="nul = this execVM ""sand_scripts\crate_gear\boxRS1.sqf"";";
+			init="nul = this execVM ""sand_scripts\crate_gear\boxRS1.sqf""; this addAction [""1-1 Squad Box"",nil,nil,6,true,true,"""",""""];";
 		};
 		class Item246
 		{
@@ -4752,7 +4752,7 @@ class Mission
 			vehicle="B_supplyCrate_F";
 			skill=0.60000002;
 			text="RS2";
-			init="nul = this execVM ""sand_scripts\crate_gear\boxRS1.sqf"";";
+			init="nul = this execVM ""sand_scripts\crate_gear\boxRS1.sqf""; this addAction [""1-2 Squad Box"",nil,nil,6,true,true,"""",""""];";
 		};
 		class Item247
 		{
@@ -4764,7 +4764,7 @@ class Mission
 			vehicle="B_supplyCrate_F";
 			skill=0.60000002;
 			text="RS3";
-			init="nul = this execVM ""sand_scripts\crate_gear\boxRS1.sqf"";";
+			init="nul = this execVM ""sand_scripts\crate_gear\boxRS1.sqf""; this addAction [""1-3 Squad Box"",nil,nil,6,true,true,"""",""""];";
 		};
 		class Item248
 		{
@@ -4776,7 +4776,7 @@ class Mission
 			vehicle="B_supplyCrate_F";
 			skill=0.60000002;
 			text="PHQ1";
-			init="nul = this execVM ""sand_scripts\crate_gear\boxPHQ.sqf"";";
+			init="nul = this execVM ""sand_scripts\crate_gear\boxPHQ.sqf""; this addAction [""Platoon Box"",nil,nil,6,true,true,"""",""""];";
 		};
 		class Item249
 		{
@@ -4788,7 +4788,7 @@ class Mission
 			vehicle="B_supplyCrate_F";
 			skill=0.60000002;
 			text="RSE1";
-			init="nul = this execVM ""sand_scripts\crate_gear\boxEOD.sqf"";";
+			init="nul = this execVM ""sand_scripts\crate_gear\boxEOD.sqf""; this addAction [""EOD Box"",nil,nil,6,true,true,"""",""""];";
 		};
 		class Item250
 		{
@@ -4800,7 +4800,7 @@ class Mission
 			vehicle="B_supplyCrate_F";
 			skill=0.60000002;
 			text="RSL1";
-			init="nul = this execVM ""sand_scripts\crate_gear\boxRSL1.sqf"";";
+			init="nul = this execVM ""sand_scripts\crate_gear\boxRSL1.sqf""; this addAction [""Squad Leader Box"",nil,nil,6,true,true,"""",""""];";
 		};
 		class Item251
 		{
@@ -4812,7 +4812,7 @@ class Mission
 			vehicle="B_supplyCrate_F";
 			skill=0.60000002;
 			text="RS4";
-			init="nul = this execVM ""sand_scripts\crate_gear\boxRS2.sqf"";";
+			init="nul = this execVM ""sand_scripts\crate_gear\boxRS2.sqf""; this addAction [""2-1 Squad Box"",nil,nil,6,true,true,"""",""""];";
 		};
 		class Item252
 		{
@@ -4824,7 +4824,7 @@ class Mission
 			vehicle="B_supplyCrate_F";
 			skill=0.60000002;
 			text="RS5";
-			init="nul = this execVM ""sand_scripts\crate_gear\boxRS2.sqf"";";
+			init="nul = this execVM ""sand_scripts\crate_gear\boxRS2.sqf""; this addAction [""2-2 Squad Box"",nil,nil,6,true,true,"""",""""];";
 		};
 		class Item253
 		{
@@ -4836,7 +4836,7 @@ class Mission
 			vehicle="B_supplyCrate_F";
 			skill=0.60000002;
 			text="RS6";
-			init="nul = this execVM ""sand_scripts\crate_gear\boxRS2.sqf"";";
+			init="nul = this execVM ""sand_scripts\crate_gear\boxRS2.sqf""; this addAction [""2-3 Squad Box"",nil,nil,6,true,true,"""",""""];";
 		};
 		class Item254
 		{
@@ -4848,7 +4848,7 @@ class Mission
 			vehicle="B_supplyCrate_F";
 			skill=0.60000002;
 			text="PHQ2";
-			init="nul = this execVM ""sand_scripts\crate_gear\boxPHQ.sqf"";";
+			init="nul = this execVM ""sand_scripts\crate_gear\boxPHQ.sqf""; this addAction [""Platoon Box"",nil,nil,6,true,true,"""",""""];";
 		};
 		class Item255
 		{
@@ -4860,7 +4860,7 @@ class Mission
 			vehicle="B_supplyCrate_F";
 			skill=0.60000002;
 			text="RSE2";
-			init="nul = this execVM ""sand_scripts\crate_gear\boxEOD.sqf"";";
+			init="nul = this execVM ""sand_scripts\crate_gear\boxEOD.sqf""; this addAction [""EOD Box"",nil,nil,6,true,true,"""",""""];";
 		};
 		class Item256
 		{
@@ -4872,7 +4872,7 @@ class Mission
 			vehicle="B_supplyCrate_F";
 			skill=0.60000002;
 			text="RSL2";
-			init="nul = this execVM ""sand_scripts\crate_gear\boxRSL2.sqf"";";
+			init="nul = this execVM ""sand_scripts\crate_gear\boxRSL2.sqf""; this addAction [""Squad Leader Box"",nil,nil,6,true,true,"""",""""];";
 		};
 		class Item257
 		{
@@ -4884,7 +4884,7 @@ class Mission
 			vehicle="B_supplyCrate_F";
 			skill=0.60000002;
 			text="RS7";
-			init="nul = this execVM ""sand_scripts\crate_gear\boxRS3.sqf"";";
+			init="nul = this execVM ""sand_scripts\crate_gear\boxRS3.sqf""; this addAction [""3-1 Squad Box"",nil,nil,6,true,true,"""",""""];";
 		};
 		class Item258
 		{
@@ -4896,7 +4896,7 @@ class Mission
 			vehicle="B_supplyCrate_F";
 			skill=0.60000002;
 			text="RS8";
-			init="nul = this execVM ""sand_scripts\crate_gear\boxRS3.sqf"";";
+			init="nul = this execVM ""sand_scripts\crate_gear\boxRS3.sqf""; this addAction [""3-2 Squad Box"",nil,nil,6,true,true,"""",""""];";
 		};
 		class Item259
 		{
@@ -4908,7 +4908,7 @@ class Mission
 			vehicle="B_supplyCrate_F";
 			skill=0.60000002;
 			text="RS9";
-			init="nul = this execVM ""sand_scripts\crate_gear\boxRS3.sqf"";";
+			init="nul = this execVM ""sand_scripts\crate_gear\boxRS3.sqf""; this addAction [""3-3 Squad Box"",nil,nil,6,true,true,"""",""""];";
 		};
 		class Item260
 		{
@@ -4920,7 +4920,7 @@ class Mission
 			vehicle="B_supplyCrate_F";
 			skill=0.60000002;
 			text="PHQ3";
-			init="nul = this execVM ""sand_scripts\crate_gear\boxPHQ.sqf"";";
+			init="nul = this execVM ""sand_scripts\crate_gear\boxPHQ.sqf""; this addAction [""Platoon Box"",nil,nil,6,true,true,"""",""""];";
 		};
 		class Item261
 		{
@@ -4932,7 +4932,7 @@ class Mission
 			vehicle="B_supplyCrate_F";
 			skill=0.60000002;
 			text="RSE3";
-			init="nul = this execVM ""sand_scripts\crate_gear\boxEOD.sqf"";";
+			init="nul = this execVM ""sand_scripts\crate_gear\boxEOD.sqf""; this addAction [""EOD Box"",nil,nil,6,true,true,"""",""""];";
 		};
 		class Item262
 		{
@@ -4944,7 +4944,7 @@ class Mission
 			vehicle="B_supplyCrate_F";
 			skill=0.60000002;
 			text="RSL3";
-			init="nul = this execVM ""sand_scripts\crate_gear\boxRSL3.sqf"";";
+			init="nul = this execVM ""sand_scripts\crate_gear\boxRSL3.sqf""; this addAction [""Squad Leader Box"",nil,nil,6,true,true,"""",""""];";
 		};
 		class Item263
 		{
@@ -4956,7 +4956,7 @@ class Mission
 			vehicle="B_supplyCrate_F";
 			skill=1;
 			text="CWB";
-			init="nul = this execVM ""sand_scripts\crate_gear\boxCWS.sqf"";";
+			init="nul = this execVM ""sand_scripts\crate_gear\boxCWS.sqf""; this addAction [""Weapons Squad"",nil,nil,6,true,true,"""",""""];";
 		};
 		class Item264
 		{
@@ -4968,7 +4968,7 @@ class Mission
 			vehicle="B_supplyCrate_F";
 			skill=1;
 			text="CHQ";
-			init="nul = this execVM ""sand_scripts\crate_gear\boxCHQ.sqf"";";
+			init="nul = this execVM ""sand_scripts\crate_gear\boxCHQ.sqf""; this addAction [""Company HQ"",nil,nil,6,true,true,"""",""""];";
 		};
 		class Item265
 		{
@@ -4980,7 +4980,7 @@ class Mission
 			vehicle="B_supplyCrate_F";
 			skill=1;
 			text="CHE";
-			init="nul = this execVM ""sand_scripts\crate_gear\boxCHQE.sqf"";";
+			init="nul = this execVM ""sand_scripts\crate_gear\boxCHQE.sqf""; this addAction [""CHE"",nil,nil,6,true,true,"""",""""];";
 		};
 		class Item266
 		{
@@ -4992,7 +4992,7 @@ class Mission
 			vehicle="B_supplyCrate_F";
 			skill=1;
 			text="CHW";
-			init="nul = this execVM ""sand_scripts\crate_gear\boxCHW.sqf"";";
+			init="nul = this execVM ""sand_scripts\crate_gear\boxCHW.sqf""; this addAction [""CHW"",nil,nil,6,true,true,"""",""""];";
 		};
 		class Item267
 		{
@@ -5004,7 +5004,7 @@ class Mission
 			vehicle="B_supplyCrate_F";
 			skill=1;
 			text="CWA";
-			init="nul = this execVM ""sand_scripts\crate_gear\boxCWA.sqf"";";
+			init="nul = this execVM ""sand_scripts\crate_gear\boxCWA.sqf""; this addAction [""CWA"",nil,nil,6,true,true,"""",""""];";
 		};
 		class Item268
 		{
