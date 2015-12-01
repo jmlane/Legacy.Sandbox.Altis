@@ -1,6 +1,6 @@
-author = "Alphapan, AustinXmedic, and Moses";
+author = "Alphapan, AustinXmedic, Moses, and Diffusion9";
 onLoadName = "Athena Security Group";
-onLoadMission = Support the server at AthenaSecurityGroup.com;
+onLoadMission = Support the server at AthenaSecurityGroup.com, or visit our reddit at /r/AthenaSecurityGroup;
 disabledAI=1;
 disableChannels[]={0,2,4,6};
 debriefing=1;

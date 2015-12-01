@@ -105,6 +105,9 @@ enableSaving [false,false];
 PB_CONTROL = [];
 publicVariable "PB_CONTROL";
 
+// disable squad Menu HUD
+showHUD [true,true,true,true,true,true,false,true];
+
 // ==========================================
 // GLOBAL EXECUTION
 [] execVM "sand_scripts\sand_radio.sqf";
@@ -114,6 +117,7 @@ publicVariable "PB_CONTROL";
 [] execVM "sand_scripts\greek_gear\IndiGear.sqf";
 [] execVM "sand_scripts\sand_NPCinteraction.sqf";
 [] execVM "sand_scripts\sand_prices.sqf";
+
 if(isServer || !isMultiplayer) then
 {
 	[] execVM "sand_scripts\sand_serverPersist.sqf";
