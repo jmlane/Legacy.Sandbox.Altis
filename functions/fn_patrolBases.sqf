@@ -21,6 +21,8 @@ switch(_platoon) do
 		
 		patrolBase1Up = true;
 		publicVariable "patrolBase1Up";
+		PB_CONTROL set [1,(["Pack Up Plt.1 Base", [2], "", -5, [["expression", "[1] spawn AUSMD_fnc_removePatrolBase;"]], "1", "1", ""])];
+		publicVariable "PB_CONTROL";
 	};
 	case 2:
 	{
@@ -31,6 +33,8 @@ switch(_platoon) do
 		
 		patrolBase2Up = true;
 		publicVariable "patrolBase2Up";
+		PB_CONTROL set [2,(["Pack Up Plt.2 Base", [3], "", -5, [["expression", "[2] spawn AUSMD_fnc_removePatrolBase;"]], "1", "1", ""])];
+		publicVariable "PB_CONTROL";
 	};
 	case 3:
 	{
@@ -40,6 +44,8 @@ switch(_platoon) do
 		"PB3" SetMarkerText "Platoon 3 Patrol Base";
 		patrolBase3Up = true;
 		publicVariable "patrolBase3Up";
+		PB_CONTROL set [3,(["Pack Up Plt.3 Base", [4], "", -5, [["expression", "[3] spawn AUSMD_fnc_removePatrolBase;"]], "1", "1", ""])];
+		publicVariable "PB_CONTROL";
 	};
 	case 4:
 	{
@@ -49,6 +55,8 @@ switch(_platoon) do
 		"CB" SetMarkerText "Company HQ Base";
 		commandBaseUp = true;
 		publicVariable "commandBaseUp";
+		PB_CONTROL set [4,(["Pack Up Company HQ", [5], "", -5, [["expression", "[4] spawn AUSMD_fnc_removePatrolBase;"]], "1", "1", ""])];
+		publicVariable "PB_CONTROL";
 	};
 	case 5:
 	{
@@ -58,6 +66,8 @@ switch(_platoon) do
 		"WS" SetMarkerText "Weapons Squad Base";
 		WeaponsBaseUp = true;
 		publicVariable "WeaponsBaseUp";
+		PB_CONTROL set [5,(["Pack Up Weapons Base", [6], "", -5, [["expression", "[5] spawn AUSMD_fnc_removePatrolBase;"]], "1", "1", ""])];
+		publicVariable "PB_CONTROL";
 	};
 };
 

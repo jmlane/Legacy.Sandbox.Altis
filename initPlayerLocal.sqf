@@ -73,9 +73,10 @@ player addAction ["Company Bank",{hint format ["Company Bank: %1",GV_Sand_Balanc
 
 player addAction ["Jobs",{createDialog "AUSMDMissions"},nil,1.2,False,True,"",' player distance register < 5 && (rank player isEqualTo "LIEUTENANT" OR rank player isEqualTo "CAPTAIN" OR rank player isEqualTo "MAJOR" OR rank player isEqualTo "COLONEL" OR player in ([OPS,PL3,PS3,RO3,CM3,RO6,CM6,HQ6,HQ5,HQ4,PL2,PS2,RO2,CM2,PL1,PS1,RO1,CM1])) '];
 
-//patrol bases
-player addAction ["Build Menu",{createDialog "PatrolBaseAdd";},nil,0.5,False,True,"",' vehicle player == player && player in ([HQ4,HQ5,HQ6,OPS,PL1,PS1,PL2,PS2,PL3,PS3,WSL]) '];
-player addAction ["Remove Menu",{createDialog "patrolBaseRemove";},nil,0.5,False,True,"",' vehicle player == player && player in ([HQ4,HQ5,HQ6,OPS,PL1,PS1,PL2,PS2,PL3,PS3,WSL]) '];
+// old patrol bases -- now moved to commMenu
+// code left for legacy
+// player addAction ["Build Menu",{createDialog "PatrolBaseAdd";},nil,0.5,False,True,"",' vehicle player == player && player in ([HQ4,HQ5,HQ6,OPS,PL1,PS1,PL2,PS2,PL3,PS3,WSL]) '];
+// player addAction ["Remove Menu",{createDialog "patrolBaseRemove";},nil,0.5,False,True,"",' vehicle player == player && player in ([HQ4,HQ5,HQ6,OPS,PL1,PS1,PL2,PS2,PL3,PS3,WSL]) '];
 
 // old earplugs -- now moved to commMenu
 // code left for legacy
@@ -93,6 +94,7 @@ player addAction ["Drop Object",{construction_object setVariable ["being_moved",
 
 // Add Earplug Toggle to Comm Menu
 comm_earplugToggle = [player,"earplugToggle",nil,nil,""] call BIS_fnc_addCommMenuItem;
+[] execVM "sand_scripts\sand_initCommMenu.sqf";
 
 if(getPlayerUID player isEqualTo  76561198031485127 || getPlayerUID player isEqualTo 76561198076263154) then
 {

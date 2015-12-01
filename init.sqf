@@ -101,6 +101,10 @@ platoon3Holders = [h14,h15,h16,h17,h18,h19];
 enableEngineArtillery false;
 enableSaving [false,false];
 
+// for patrolBase commMenu.
+PB_CONTROL = [];
+publicVariable "PB_CONTROL";
+
 // ==========================================
 // GLOBAL EXECUTION
 [] execVM "sand_scripts\sand_radio.sqf";
@@ -139,4 +143,3 @@ else
 AUSMD_keyHandlerPlayer = (findDisplay 46) displayAddEventHandler ["KeyDown",{[_this] call AUSMD_fnc_keyHandle;}];
 
 titleText["","BLACK IN",3.5];
-

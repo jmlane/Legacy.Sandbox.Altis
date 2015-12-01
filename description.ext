@@ -160,6 +160,15 @@ class CfgCommunicationMenu {
         enable = "1";
         removeAfterExpressionCall = 0;
 	};
+	class pbControl
+	{
+		text = "Base Deployment";
+        submenu = "#USER:PB_CONTROL";
+        expression = "";
+        cursor = ""; 
+        enable = "1"; 
+        removeAfterExpressionCall = 0;
+	};
 };
 
 #include "defines.hpp"

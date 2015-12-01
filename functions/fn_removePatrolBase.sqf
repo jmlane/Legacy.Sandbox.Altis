@@ -40,6 +40,8 @@ switch(_base) do
 		} forEach [RS1,RS2,RS3,RSL1,RSE1,PHQ1];
 		patrolBase1Up = false;
 		publicVariable "patrolBase1Up";
+		PB_CONTROL set [1,(["Deploy Plt.1 Base", [2], "", -5, [["expression", "[1,getPos player] spawn AUSMD_fnc_patrolBases;"]], "1", "1", "\A3\ui_f\data\IGUI\Cfg\Cursors\iconcursorsupport_ca.paa"])];
+		publicVariable "PB_CONTROL";
 	};
 	case 2: 
 	{
@@ -79,6 +81,8 @@ switch(_base) do
 		} forEach [RS6,RS5,RS4,RSE2,RSL2,PHQ2];
 		patrolBase2Up = false;
 		publicVariable "patrolBase2Up";
+		PB_CONTROL set [2,(["Deploy Plt.2 Base", [3], "", -5, [["expression", "[2,getPos player] spawn AUSMD_fnc_patrolBases;"]], "1", "1", "\A3\ui_f\data\IGUI\Cfg\Cursors\iconcursorsupport_ca.paa"])];
+		publicVariable "PB_CONTROL";
 	};
 	case 3: 
 	{
@@ -118,6 +122,8 @@ switch(_base) do
 		} forEach [RS9,RS8,RS7,RSL3,RSE3,PHQ3];
 		patrolBase3Up = false;
 		publicVariable "patrolBase3Up";
+		PB_CONTROL set [3,(["Deploy Plt.3 Base", [4], "", -5, [["expression", "[3,getPos player] spawn AUSMD_fnc_patrolBases;"]], "1", "1", "\A3\ui_f\data\IGUI\Cfg\Cursors\iconcursorsupport_ca.paa"])];
+		publicVariable "PB_CONTROL";
 	};
 	case 4:
 	{
@@ -142,6 +148,8 @@ switch(_base) do
 		} forEach [CHQ,CHE];
 		CommandBaseUp = false;
 		publicVariable "CommandBaseUp";
+		PB_CONTROL set [4,(["Deploy Company HQ", [5], "", -5, [["expression", "[4,getPos player] spawn AUSMD_fnc_patrolBases;"]], "1", "1", "\A3\ui_f\data\IGUI\Cfg\Cursors\iconcursorsupport_ca.paa"])];
+		publicVariable "PB_CONTROL";
 	};
 	case 5:
 	{
@@ -170,6 +178,8 @@ switch(_base) do
 		} forEach [CHW,CWA,CWB];
 		WeaponsBaseUp = false;
 		publicVariable "WeaponsBaseUp";
+		PB_CONTROL set [5,(["Deploy Weapons Base", [6], "", -5, [["expression", "[5,getPos player] spawn AUSMD_fnc_patrolBases;"]], "1", "1", "\A3\ui_f\data\IGUI\Cfg\Cursors\iconcursorsupport_ca.paa"])];
+		publicVariable "PB_CONTROL";
 	};
 };
 
