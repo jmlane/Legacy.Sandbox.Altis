@@ -111,6 +111,10 @@ publicVariable "PB_CONTROL";
 ADMIN_CONTROL = [];
 publicVariable "ADMIN_CONTROL";
 
+// for radioControl
+// RADIO_CONTROL = [];
+// publicVariable "RADIO_CONTROL";
+
 // disable squad Menu HUD
 showHUD [true,true,true,true,true,true,false,true];
 

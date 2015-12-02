@@ -147,86 +147,45 @@ if isServer then { //Only do this if we are a server
     { [_x select 0,true,[],_x select 1] call RADIO } forEach CHANNELS; //Create all the channels from 'CHANNELS' array ready for players to be added to
 	
 	// HANDLE BACKUPS
-	// Diffusion9 2015-11-01
-	addMissionEventHandler ["HandleDisconnect",{	//when a player disconnects
-		_dcUnit = _this select 0;	//grab the reference to the disconnected unit
-		_dcUnitStr = (toUpper str _dcUnit);	//creates a stringed version of the unit reference for searching in the channel arrays.
-		_dcUnitIndex = [CHANNEL_DATA, _dcUnitStr] call KK_fnc_findAll;
-		diag_log format ["DEBUG:		Player has disconnected: %1",_dcUnitStr];
-		diag_log format ["DEBUG:		Position in Channel Data: %1",_dcUnitIndex];
-
-		if (isNil {_dcUnitIndex select 0}) then
-			{
-				diag_log format ["DEBUG:	_dcUnitIndex is nill"];
-			}; // Unit not in CHANNEL_DATA
-
-		diag_log format ["=====BEGIN ACTIVE BACKUPS CLEANUP====="];
-		backupOutput = [];
-		{ //forEach ACTIVE_BACKUPS;
-			if ((_dcUnitStr in _x)) then
+	// Diffusion9 2015-12-01
+	addMissionEventHandler ["HandleDisconnect",
+	{
+		_dcUnit = _this select 0;
+		_dcUnitStr = (toUpper str _dcUnit);
+		_primaryCheck = [CHANNEL_DATA, _dcUnitStr] call KK_fnc_findAll;
+		_idArray = [];
+		{_idArray pushback (_x select 0);} forEach _primaryCheck;
+		_backupArray = [];
+		{_backupArray pushback ([CHANNEL_BACKUPS, _x] call KK_fnc_findAllGetPath);} forEach _primaryCheck;
+		_chanNameArray = [];
+		{_chanNameArray pushback (CHANNELS select (_x select 0) select 0);} forEach _primaryCheck;
+		{
+			if ((count _x) > 0) then {
+				diag_log format ["RADIO: Backup Found: %1",_forEachindex];
+				_x2 = _forEachindex;
 				{
-					diag_log format ["DEBUG:		This unit is an active backup"];
-					diag_log format ["DEBUG:		%1",_x];
-					_x = [_x];
-					ACTIVE_BACKUPS = ACTIVE_BACKUPS - _x;
-					publicVariable "ACTIVE_BACKUPS";
-					_bkPreInit = [CHANNEL_BACKUPS, _dcUnitStr] call KK_fnc_findAll;
-					diag_log format ["DEBUG:		_bkPreInit: %1",_bkPreInit];
-					{
-						_x deleteAt 2;		
-					} forEach _bkPreInit;
-					diag_log format ["DEBUG:		_bkPreInit: %1",_bkPreInit];
-					
-					backupOutput = [];
-					backupOutput = (backupOutput - _bkPreInit) + _bkPreInit;
-					diag_log format ["DEBUG:		%1",backupOutput];
-				};
-		} forEach ACTIVE_BACKUPS;
-		diag_log format ["DEBUG:		%1",ACTIVE_BACKUPS];
-		_dcUnitIndex = _dcUnitIndex + backupOutput;
-		diag_log format ["DEBUG:		Backup Output: %1",_dcUnitIndex];
-		{
-			diag_log format ["DEBUG:		Backup Output: %1",([CHANNEL_DATA,[0,(_x select 0)]] call KK_fnc_FindAllGetPath)];
-			_x = (missionNamespace getVariable [(([CHANNEL_DATA,[0,(_x select 0)]] call KK_fnc_FindAllGetPath)),objNull]);
-			diag_log format ["DEBUG:		_x: %1",_x];
-		} forEach _dcUnitIndex;
-		diag_log format ["====================================="];
-		if (isNil {_dcUnitIndex select 0}) then
-			{
-				diag_log format ["DEBUG:	_dcUnitIndex is nill"];
-			}; // Unit not in CHANNEL_DATA
-			
-		diag_log format ["RADIO:		FIND REPLACEMENT"];
-		diag_log format ["DEBUG:		_dcUnitIndex: %1",_dcUnitIndex];
-			
-		if (isNil {_dcUnitIndex select 0}) exitWith {
-			diag_log format ["DEBUG:	_dcUnitIndex is nill"];
-			}; // Unit not in CHANNEL_DATA or ACTIVE_BACKUPS
-		
-		// forEach _x is _dcUnitIndex
-		{
-			_bkUnitArray = [CHANNEL_BACKUPS,_x] call KK_fnc_findAllGetPath;
-			_channelIndex = [] + _x;	// make a copy, so we can manipulate it into other things.
-			_channelIndex set [1,0]; // ex: input: [1,2] output: [1,0] -- changes second value to 0. creates channel name index.
-			_channel = [CHANNELS,_channelIndex] call KK_fnc_findAllGetPath; // ex ouput: "Platoon 1" -- name of target channel.
-			// forEach _x is _bkUnitArray
-			{
-				_x = missionNamespace getVariable [_x,objNull];
-				if (isPlayer _x) exitWith {
-					_activeBackup = [ACTIVE_BACKUPS, (toUpper str _x)] call KK_fnc_findAll select 0;
-					if (isNil {_activeBackup}) exitWith {
-						_gBackupsContent = [ (toUpper str _x), _channel ];
-						ACTIVE_BACKUPS pushback _gBackupsContent;
-						publicVariable "ACTIVE_BACKUPS";
-						[true,_channel,[_x]] call RADIO;
-						[format["[RADIO] %1 was added to %2 to replace %3",name _x,_channel,_this select 3],"systemChat",true] call BIS_fnc_MP;
-						// [_x,"disconnectChannel",nil,nil,""] call BIS_fnc_addCommMenuItem;
-						[_x,"disconnectChannel",nil,nil,""] remoteExec ["BIS_fnc_addCommMenuItem"];
+					if (isPlayer (missionNamespace getVariable [_x,objNull])) exitWith {
+						_chanBackup = _x;
+						_chanName = (_chanNameArray select _x2);
+						_chanID = (_idArray select _x2);
+						_chanVarName = ("chan" + str ((_chanID) + 1));
+						_chanDescription = format ["Disconnect %1",(_chanName)];
+						_rcTarget = ((_chanID) + 1);
+						_playerVar = missionNamespace getVariable [_x,objNull];
+						_chanDisconnect = format ["RADIO_CONTROL set [%1,null]; [false,""%2"",[%3]] call RADIO;", _rcTarget, _chanName, _playerVar];
+						_chanData = [_chanDescription, [((_chanID) + 2)], "", -5, [["expression", _chanDisconnect]], "1", "1"];
+						missionNamespace setVariable [_chanVarName, _chanData];
+						[true,_chanName,[_playerVar]] call RADIO;
+						[format["[RADIO] %1 was added to %2 to replace %3", name _playerVar, _chanName, _this select 3],"systemChat",true] call BIS_fnc_MP;
+						RADIO_CONTROL set [_rcTarget, _chanData];
+						publicVariable "RADIO_CONTROL";
+						[_playerVar, "radioControl",nil,nil,""] remoteExec ["BIS_fnc_addCommMenuItem"];
 					};
-				};
-			} forEach _bkUnitArray;
-			
-		} forEach _dcUnitIndex;	
+				} forEach _x;
+			} else {
+				diag_log format ["No Backup Available"];
+			};
+		} forEach _backupArray;
 	}];
 };
 

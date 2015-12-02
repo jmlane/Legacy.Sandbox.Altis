@@ -90,7 +90,9 @@ player addAction ["Move Object",{[] call AUSMD_fnc_constructionMove;},nil,0.15,F
 player addAction ["Drop Object",{construction_object setVariable ["being_moved",false,true];detach construction_Object;construction_Building = false;construction_Object = objNull;hint "Object Placed.";player forceWalk false;},nil,0.15,False,True,"",' construction_building && alive player && vehicle player == player'];			
 
 // Add Earplug Toggle to Comm Menu for all players.
+RADIO_CONTROL = [["Radio Control",false]];
 comm_earplugToggle = [player,"earplugToggle",nil,nil,""] call BIS_fnc_addCommMenuItem;
+
 
 // Init the specialized commMenu.
 [] execVM "sand_scripts\sand_initCommMenu.sqf";
@@ -99,14 +101,12 @@ comm_earplugToggle = [player,"earplugToggle",nil,nil,""] call BIS_fnc_addCommMen
 	OLD ADMIN MENU CODE. LEGACY.
 if(getPlayerUID player isEqualTo  76561198031485127 || getPlayerUID player isEqualTo 76561198076263154) then
 {
-	
 	player addAction ["Admin Menu",{createDialog "AUSMDDebug";},nil,0.4,False,True,"", ' alive player '];
 	player addAction ["TILE SYSTEM OFF",{disableSpawning = true;publicVariable "disableSpawning";},nil,0.4,False,True,"", ' alive player && !disableSpawning'];
 	player addAction ["TILE SYSTEM ON",{disableSpawning = true;publicVariable "disableSpawning";},nil,0.4,False,True,"", ' alive player && disableSpawning '];
 };
 
 */
-
 
 _platoon = call ausmd_fnc_platoonMembership;
 if (_platoon isEqualTo 1 && PatrolBase1Up) then 
