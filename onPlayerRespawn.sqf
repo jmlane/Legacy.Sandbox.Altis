@@ -26,10 +26,14 @@ if(time > 30) then
 	player addAction ["Move Object",{[] call AUSMD_fnc_constructionMove;},nil,0.15,False,True,"",' alive player && vehicle player == player && typeOf cursorTarget in AUSMD_acceptedObjects && !construction_building'];
 	player addAction ["Drop Object",{construction_object setVariable ["being_moved",false,true];detach construction_Object;construction_Building = false;construction_Object = objNull;hint "Object Placed.";player forceWalk false;},nil,0.15,False,True,"",' construction_building && alive player && vehicle player == player && typeOf cursorTarget in AUSMD_acceptedObjects'];			
 
+	/*
+		OLD ADMIN MENU CODE. LEGACY.
 	if(getPlayerUID player isEqualTo  76561198031485127 || getPlayerUID player isEqualTo 76561198076263154) then
 	{
 		player addAction ["Admin Menu",{createDialog "AUSMDDebug";},nil,0.4,False,True,"", ' alive player '];
 		player addAction ["TILE SYSTEM OFF",{disableSpawning = true;publicVariable "disableSpawning";},nil,0.4,False,True,"", ' alive player && !disableSpawning'];
 		player addAction ["TILE SYSTEM ON",{disableSpawning = true;publicVariable "disableSpawning";},nil,0.4,False,True,"", ' alive player && disableSpawning '];
 	};
+	
+	*/
 };

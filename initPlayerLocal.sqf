@@ -89,10 +89,14 @@ player addAction ["Vehicle Inventory",{createDialog "vehInventory"},nil,0.25,Fal
 player addAction ["Move Object",{[] call AUSMD_fnc_constructionMove;},nil,0.15,False,True,"",' alive player && vehicle player == player && typeOf cursorTarget in AUSMD_acceptedObjects && !construction_building'];
 player addAction ["Drop Object",{construction_object setVariable ["being_moved",false,true];detach construction_Object;construction_Building = false;construction_Object = objNull;hint "Object Placed.";player forceWalk false;},nil,0.15,False,True,"",' construction_building && alive player && vehicle player == player'];			
 
-// Add Earplug Toggle to Comm Menu
+// Add Earplug Toggle to Comm Menu for all players.
 comm_earplugToggle = [player,"earplugToggle",nil,nil,""] call BIS_fnc_addCommMenuItem;
+
+// Init the specialized commMenu.
 [] execVM "sand_scripts\sand_initCommMenu.sqf";
 
+/*
+	OLD ADMIN MENU CODE. LEGACY.
 if(getPlayerUID player isEqualTo  76561198031485127 || getPlayerUID player isEqualTo 76561198076263154) then
 {
 	
@@ -101,6 +105,7 @@ if(getPlayerUID player isEqualTo  76561198031485127 || getPlayerUID player isEqu
 	player addAction ["TILE SYSTEM ON",{disableSpawning = true;publicVariable "disableSpawning";},nil,0.4,False,True,"", ' alive player && disableSpawning '];
 };
 
+*/
 
 
 _platoon = call ausmd_fnc_platoonMembership;

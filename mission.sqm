@@ -18,7 +18,6 @@ class Mission
 		"A3_Structures_F_Mil_BagBunker",
 		"A3_Characters_F_INDEP",
 		"A3_Soft_F_Truck",
-		"3DEN",
 		"A3_Structures_F_System",
 		"A3_Structures_F_Mil_Helipads",
 		"A3_Structures_F_Furniture"
@@ -28,7 +27,6 @@ class Mission
 		"A3_Characters_F_BLUFOR",
 		"a3_characters_f",
 		"A3_Characters_F_Gamma",
-		"3DEN",
 		"a3_modules_f_curator_curator",
 		"A3_Modules_F",
 		"A3_Structures_F_Items_Vessels",
@@ -188,6 +186,7 @@ class Mission
 					rank="SERGEANT";
 					skill=1;
 					text="A12";
+					description="1-2 Squad Leader";
 				};
 				class Item1
 				{
@@ -201,6 +200,7 @@ class Mission
 					rank="CORPORAL";
 					skill=1;
 					text="A12A";
+					description="1-2 Alpha Team Leader";
 				};
 				class Item2
 				{
@@ -213,6 +213,7 @@ class Mission
 					player="PLAY CDG";
 					skill=1;
 					text="A123";
+					description="1-2 Alpha Team Rifleman";
 				};
 				class Item3
 				{
@@ -225,6 +226,7 @@ class Mission
 					player="PLAY CDG";
 					skill=1;
 					text="A124";
+					description="1-2 Alpha Team Autorifleman";
 				};
 				class Item4
 				{
@@ -238,6 +240,7 @@ class Mission
 					rank="CORPORAL";
 					skill=1;
 					text="A12B";
+					description="1-2 Bravo Team Leader";
 				};
 				class Item5
 				{
@@ -250,6 +253,7 @@ class Mission
 					player="PLAY CDG";
 					skill=1;
 					text="A126";
+					description="1-2 Bravo Team Rifleman";
 				};
 				class Item6
 				{
@@ -262,6 +266,7 @@ class Mission
 					player="PLAY CDG";
 					skill=1;
 					text="A127";
+					description="1-2 Bravo Team Autorifleman";
 				};
 			};
 		};
@@ -284,6 +289,7 @@ class Mission
 					rank="SERGEANT";
 					skill=1;
 					text="A13";
+					description="1-3 Squad Leader";
 				};
 				class Item1
 				{
@@ -297,6 +303,7 @@ class Mission
 					rank="CORPORAL";
 					skill=1;
 					text="A13A";
+					description="1-3 Alpha Team Leader";
 				};
 				class Item2
 				{
@@ -309,6 +316,7 @@ class Mission
 					player="PLAY CDG";
 					skill=1;
 					text="A133";
+					description="1-3 Alpha Team Rifleman";
 				};
 				class Item3
 				{
@@ -321,6 +329,7 @@ class Mission
 					player="PLAY CDG";
 					skill=1;
 					text="A134";
+					description="1-3 Alpha Team Autorifleman";
 				};
 				class Item4
 				{
@@ -334,6 +343,7 @@ class Mission
 					rank="CORPORAL";
 					skill=1;
 					text="A13B";
+					description="1-3 Bravo Team Leader";
 				};
 				class Item5
 				{
@@ -346,6 +356,7 @@ class Mission
 					player="PLAY CDG";
 					skill=1;
 					text="A136";
+					description="1-3 Bravo Team Rifleman";
 				};
 				class Item6
 				{
@@ -358,6 +369,7 @@ class Mission
 					player="PLAY CDG";
 					skill=1;
 					text="A137";
+					description="1-3 Bravo Team Autorifleman";
 				};
 			};
 		};
@@ -380,6 +392,7 @@ class Mission
 					rank="SERGEANT";
 					skill=1;
 					text="A21";
+					description="2-1 Squad Leader";
 				};
 				class Item1
 				{
@@ -393,6 +406,7 @@ class Mission
 					rank="CORPORAL";
 					skill=1;
 					text="A21A";
+					description="2-1 Alpha Team Leader";
 				};
 				class Item2
 				{
@@ -405,6 +419,7 @@ class Mission
 					player="PLAY CDG";
 					skill=1;
 					text="A213";
+					description="2-1 Alpha Team Rifleman";
 				};
 				class Item3
 				{
@@ -417,6 +432,7 @@ class Mission
 					player="PLAY CDG";
 					skill=1;
 					text="A214";
+					description="2-1 Alpha Team Autorifleman";
 				};
 				class Item4
 				{
@@ -430,6 +446,7 @@ class Mission
 					rank="CORPORAL";
 					skill=1;
 					text="A21B";
+					description="2-1 Bravo Team Leader";
 				};
 				class Item5
 				{
@@ -442,6 +459,7 @@ class Mission
 					player="PLAY CDG";
 					skill=1;
 					text="A216";
+					description="2-1 Bravo Team Rifleman";
 				};
 				class Item6
 				{
@@ -454,6 +472,7 @@ class Mission
 					player="PLAY CDG";
 					skill=1;
 					text="A217";
+					description="2-1 Bravo Team Autorifleman";
 				};
 			};
 		};
@@ -476,6 +495,7 @@ class Mission
 					rank="SERGEANT";
 					skill=1;
 					text="A22";
+					description="2-2 Squad Leader";
 				};
 				class Item1
 				{
@@ -489,6 +509,7 @@ class Mission
 					rank="CORPORAL";
 					skill=1;
 					text="A22A";
+					description="2-2 Alpha Team Leader";
 				};
 				class Item2
 				{
@@ -501,6 +522,7 @@ class Mission
 					player="PLAY CDG";
 					skill=1;
 					text="A223";
+					description="2-2 Alpha Team Rifleman";
 				};
 				class Item3
 				{
@@ -513,6 +535,7 @@ class Mission
 					player="PLAY CDG";
 					skill=1;
 					text="A224";
+					description="2-2 Alpha Team Autorifleman";
 				};
 				class Item4
 				{
@@ -526,6 +549,7 @@ class Mission
 					rank="CORPORAL";
 					skill=1;
 					text="A22B";
+					description="2-2 Bravo Team Leader";
 				};
 				class Item5
 				{
@@ -538,6 +562,7 @@ class Mission
 					player="PLAY CDG";
 					skill=1;
 					text="A226";
+					description="2-2 Bravo Team Rifleman";
 				};
 				class Item6
 				{
@@ -550,6 +575,7 @@ class Mission
 					player="PLAY CDG";
 					skill=1;
 					text="A227";
+					description="2-2 Bravo Team Autorifleman";
 				};
 			};
 		};
@@ -572,6 +598,7 @@ class Mission
 					rank="SERGEANT";
 					skill=1;
 					text="A23";
+					description="2-3 Squad Leader";
 				};
 				class Item1
 				{
@@ -585,6 +612,7 @@ class Mission
 					rank="CORPORAL";
 					skill=1;
 					text="A23A";
+					description="2-3 Alpha Team Leader";
 				};
 				class Item2
 				{
@@ -597,6 +625,7 @@ class Mission
 					player="PLAY CDG";
 					skill=1;
 					text="A233";
+					description="2-3 Alpha Team Rifleman";
 				};
 				class Item3
 				{
@@ -609,6 +638,7 @@ class Mission
 					player="PLAY CDG";
 					skill=1;
 					text="A234";
+					description="2-3 Alpha Team Autorifleman";
 				};
 				class Item4
 				{
@@ -622,6 +652,7 @@ class Mission
 					rank="CORPORAL";
 					skill=1;
 					text="A23B";
+					description="2-3 Bravo Team Leader";
 				};
 				class Item5
 				{
@@ -634,6 +665,7 @@ class Mission
 					player="PLAY CDG";
 					skill=1;
 					text="A236";
+					description="2-3 Bravo Team Rifleman";
 				};
 				class Item6
 				{
@@ -646,6 +678,7 @@ class Mission
 					player="PLAY CDG";
 					skill=1;
 					text="A237";
+					description="2-3 Bravo Team Autorifleman";
 				};
 			};
 		};
@@ -668,6 +701,7 @@ class Mission
 					rank="SERGEANT";
 					skill=1;
 					text="A31";
+					description="3-1 Squad Leader";
 				};
 				class Item1
 				{
@@ -681,6 +715,7 @@ class Mission
 					rank="CORPORAL";
 					skill=1;
 					text="A31A";
+					description="3-1 Alpha Team Leader";
 				};
 				class Item2
 				{
@@ -693,6 +728,7 @@ class Mission
 					player="PLAY CDG";
 					skill=1;
 					text="A313";
+					description="3-1 Alpha Team Rifleman";
 				};
 				class Item3
 				{
@@ -705,6 +741,7 @@ class Mission
 					player="PLAY CDG";
 					skill=1;
 					text="A314";
+					description="3-1 Alpha Team Autorifleman";
 				};
 				class Item4
 				{
@@ -718,6 +755,7 @@ class Mission
 					rank="CORPORAL";
 					skill=1;
 					text="A31B";
+					description="3-1 Bravo Team Leader";
 				};
 				class Item5
 				{
@@ -730,6 +768,7 @@ class Mission
 					player="PLAY CDG";
 					skill=1;
 					text="A316";
+					description="3-1 Bravo Team Rifleman";
 				};
 				class Item6
 				{
@@ -742,6 +781,7 @@ class Mission
 					player="PLAY CDG";
 					skill=1;
 					text="A317";
+					description="3-1 Bravo Team Autorifleman";
 				};
 			};
 		};
@@ -764,6 +804,7 @@ class Mission
 					rank="SERGEANT";
 					skill=1;
 					text="A32";
+					description="3-2 Squad Leader";
 				};
 				class Item1
 				{
@@ -777,6 +818,7 @@ class Mission
 					rank="CORPORAL";
 					skill=1;
 					text="A32A";
+					description="3-2 Alpha Team Leader";
 				};
 				class Item2
 				{
@@ -789,6 +831,7 @@ class Mission
 					player="PLAY CDG";
 					skill=1;
 					text="A323";
+					description="3-2 Alpha Team Rifleman";
 				};
 				class Item3
 				{
@@ -801,6 +844,7 @@ class Mission
 					player="PLAY CDG";
 					skill=1;
 					text="A324";
+					description="3-2 Alpha Team Autorifleman";
 				};
 				class Item4
 				{
@@ -814,6 +858,7 @@ class Mission
 					rank="CORPORAL";
 					skill=1;
 					text="A32B";
+					description="3-2 Bravo Team Leader";
 				};
 				class Item5
 				{
@@ -826,6 +871,7 @@ class Mission
 					player="PLAY CDG";
 					skill=1;
 					text="A326";
+					description="3-2 Bravo Team Rifleman";
 				};
 				class Item6
 				{
@@ -838,6 +884,7 @@ class Mission
 					player="PLAY CDG";
 					skill=1;
 					text="A327";
+					description="3-2 Bravo Team Autorifleman";
 				};
 			};
 		};
@@ -860,6 +907,7 @@ class Mission
 					rank="SERGEANT";
 					skill=1;
 					text="A33";
+					description="3-3 Squad Leader";
 				};
 				class Item1
 				{
@@ -873,6 +921,7 @@ class Mission
 					rank="CORPORAL";
 					skill=1;
 					text="A33A";
+					description="3-3 Alpha Team Leader";
 				};
 				class Item2
 				{
@@ -885,6 +934,7 @@ class Mission
 					player="PLAY CDG";
 					skill=1;
 					text="A333";
+					description="3-3 Alpha Team Rifleman";
 				};
 				class Item3
 				{
@@ -897,6 +947,7 @@ class Mission
 					player="PLAY CDG";
 					skill=1;
 					text="A334";
+					description="3-3 Alpha Team Autorifleman";
 				};
 				class Item4
 				{
@@ -910,6 +961,7 @@ class Mission
 					rank="CORPORAL";
 					skill=1;
 					text="A33B";
+					description="3-3 Bravo Team Leader";
 				};
 				class Item5
 				{
@@ -922,6 +974,7 @@ class Mission
 					player="PLAY CDG";
 					skill=1;
 					text="A336";
+					description="3-3 Bravo Team Rifleman";
 				};
 				class Item6
 				{
@@ -934,6 +987,7 @@ class Mission
 					player="PLAY CDG";
 					skill=1;
 					text="A337";
+					description="3-3 Bravo Team Autorifleman";
 				};
 			};
 		};

@@ -65,7 +65,7 @@ class CfgFunctions
 			class teleport {};
 			class lockUnlock {};
 			class adminPanelLoad {};
-			class moveIntoHouse {};
+			// class moveIntoHouse {}; -- missing script file
 			class addRep {};
 			class megaAttack {};
 			class groupCountCheck {};
