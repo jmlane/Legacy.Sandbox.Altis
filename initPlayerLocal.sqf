@@ -83,12 +83,15 @@ player addAction ["Jobs",{createDialog "AUSMDMissions"},nil,1.2,False,True,"",' 
 AUSMD_selectedObject = auslog;
 AUSMD_selectedVehicle = auslog;
 
+// disabled for now, may reactivate or refactor later
+/* 
 player addAction ["Select Object",{[] call AUMD_fnc_selectObject;},nil,0.45,False,True,"",' !(cursorTarget getVariable ["being_loaded",false]) && alive player && vehicle player == player && typeOf cursorTarget in AUSMD_acceptedObjects && player distance cursortarget < 10'];
 player addAction ["Select Vehicle",{[] call AUSMD_fnc_loadObject;},nil,0.35,False,True,"",' AUSMD_selectedObject != auslog && alive player && vehicle player == player && typeOf cursorTarget in AUSMD_acceptedVehicles && player distance cursortarget < 10'];
 player addAction ["Vehicle Inventory",{createDialog "vehInventory"},nil,0.25,False,True,"",' alive player && vehicle player == player && typeOf cursorTarget in AUSMD_acceptedVehicles && player distance cursorTarget < 10'];
 player addAction ["Move Object",{[] call AUSMD_fnc_constructionMove;},nil,0.15,False,True,"",' alive player && vehicle player == player && typeOf cursorTarget in AUSMD_acceptedObjects && !construction_building'];
 player addAction ["Drop Object",{construction_object setVariable ["being_moved",false,true];detach construction_Object;construction_Building = false;construction_Object = objNull;hint "Object Placed.";player forceWalk false;},nil,0.15,False,True,"",' construction_building && alive player && vehicle player == player'];			
-
+ */
+ 
 // Add Earplug Toggle to Comm Menu for all players.
 RADIO_CONTROL = [["Radio Control",false]];
 comm_earplugToggle = [player,"earplugToggle",nil,nil,""] call BIS_fnc_addCommMenuItem;

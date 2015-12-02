@@ -4,10 +4,12 @@ if(!((typeOf _veh isKindOf "Car" || typeOf _veh isKindOf "Air" || typeOf _veh is
 switch(locked _veh) do
 {
 	case 0: {_veh lock 2;hint "Locked";};
-	case 1: {_veh lock 0;hint "Unlocked";};
+	case 1: {_veh lock 2;hint "Locked";};
 	case 2: {_veh lock 0;hint "Unlocked";};
 };
 
-closeDialog 0;
-sleep 0.01;
-createDialog "AUSMDDebug";
+
+// Disabled to integrate into comm_adminPanel
+// closeDialog 0;
+// sleep 0.01;
+// createDialog "AUSMDDebug";

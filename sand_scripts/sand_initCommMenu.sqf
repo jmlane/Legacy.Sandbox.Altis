@@ -1,15 +1,11 @@
-// Sets up the commMenu
-// Will be further updated by updates to fn_removePatrolBase.sqf
-// Will be further updated by updates to fn_patrolBases.sqf
-// vehicle player == player && player in ([HQ4,HQ5,HQ6,OPS,PL1,PS1,PL2,PS2,PL3,PS3,WSL])
-
+// Base Deployment and Repack
+// commMenu
 private ["_pb1","_pb2","_pb3","_pb4","_pb5"];
-_pb1 = "";
-_pb2 = "";
-_pb3 = "";
-_pb4 = "";
-_pb5 = "";
-
+_pb1 = [];
+_pb2 = [];
+_pb3 = [];
+_pb4 = [];
+_pb5 = [];
 
 if ((toUpper str player) in (["HQ4","HQ5","HQ6","OPS","PL1","PS1","PL2","PS2","PL3","PS3","WSL"])) then {
 	comm_pbControl = [player,"pbControl",nil,nil,""] call BIS_fnc_addCommMenuItem;
@@ -57,17 +53,36 @@ if ((toUpper str player) in (["HQ4","HQ5","HQ6","OPS","PL1","PS1","PL2","PS2","P
 	publicVariable "PB_CONTROL";
 };
 
-if ((toUpper str player) in (["OPS", "BOS", "ROS"])) then {
+// Admin Panel
+// commMenu
+// Tile System Status
+_tileSystemStatus = format ["
+	if (disableSpawning) then {
+		disableSpawning = false;
+		publicVariable 'disableSpawning';
+		hint 'Tile System: Enabled';
+	} else {
+		disableSpawning = true;
+		publicVariable 'disableSpawning';
+		hint 'Tile System: Disabled';
+	};
+"];
+
+private ["_apOption1","_apOption2"];
+// comm_adminPanel define
+if ((toUpper str player) in (["OPS","BOS","ROS","A11","A12","A13","A21","A22","A23","A31","A32","A33","PS1","PS2","PS3","WSL","HQ5","BFS","RSM","PL1","PL2","PL3","HP2","HP3","HP1","HQ6","BXO","BPO","BLO","RXO","RCO"])) then {
 	comm_adminPanel = [player,"adminPanel",nil,nil,""] call BIS_fnc_addCommMenuItem;
-	_apOption1 = ["Admin Panel", [2], "", -5, [["expression", "createDialog 'AUSMDDebug';"]], "1", "1", ""];
-	_apOption2 = ["Tile System Off", [3], "", -5, [["expression", "disableSpawning = true;publicVariable 'disableSpawning';"]], "1", "1", ""];
-	_apOption3 = ["Tile System On", [4], "", -5, [["expression", "disableSpawning = false;publicVariable 'disableSpawning';"]], "1", "1", ""];
+	if ((toUpper str player) in (["OPS","BOS","ROS","A11","A12","A13","A21","A22","A23","A31","A32","A33","PS1","PS2","PS3","WSL","HQ5","BFS","RSM","PL1","PL2","PL3","HP2","HP3","HP1","HQ6","BXO","BPO","BLO","RXO","RCO"])) then {
+		_apOption1 = ["Vehicle Lock", [2], "", -5, [["expression", "[] spawn AUSMD_fnc_lockUnlock;"]], "1", "1", "\A3\ui_f\data\IGUI\Cfg\Cursors\iconcursorsupport_ca.paa"];
+	} else {_apOption1 = []};
+	if ((toUpper str player) in (["OPS","BOS","ROS"])) then {
+		_apOption2 = ["Tile System Toggle", [3], "", -5, [["expression", _tileSystemStatus]], "1", "1", ""];
+	} else {_apOption2 = []};
 	ADMIN_CONTROL = 
 	[
 		["Admin Panel",false],
 		_apOption1,
-		_apOption2,
-		_apOption3
+		_apOption2
 	];
 	publicVariable "ADMIN_CONTROL";
 };
