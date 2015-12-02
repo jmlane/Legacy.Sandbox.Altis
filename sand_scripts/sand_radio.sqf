@@ -172,7 +172,10 @@ if isServer then { //Only do this if we are a server
 						_chanDescription = format ["Disconnect %1",(_chanName)];
 						_rcTarget = ((_chanID) + 1);
 						_playerVar = missionNamespace getVariable [_x,objNull];
-						_chanDisconnect = format ["RADIO_CONTROL set [%1,null]; [false,""%2"",[%3]] call RADIO;", _rcTarget, _chanName, _playerVar];
+						_chanDisconnect = format ["
+						RADIO_CONTROL set [%1,null];
+						[false,""%2"",[%3]] call RADIO;
+						", _rcTarget, _chanName, _playerVar];
 						_chanData = [_chanDescription, [((_chanID) + 2)], "", -5, [["expression", _chanDisconnect]], "1", "1"];
 						missionNamespace setVariable [_chanVarName, _chanData];
 						[true,_chanName,[_playerVar]] call RADIO;

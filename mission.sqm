@@ -4849,7 +4849,7 @@ class Mission
 			vehicle="B_supplyCrate_F";
 			skill=0.60000002;
 			text="RSE1";
-			init="nul = this execVM ""sand_scripts\crate_gear\boxEOD.sqf""; this addAction [""EOD Box"",nil,nil,6,true,true,"""",""""];";
+			init="nul = this execVM ""sand_scripts\crate_gear\boxEOD.sqf""; this addAction [""Explosives"",nil,nil,6,true,true,"""",""""];";
 		};
 		class Item250
 		{
@@ -4921,7 +4921,7 @@ class Mission
 			vehicle="B_supplyCrate_F";
 			skill=0.60000002;
 			text="RSE2";
-			init="nul = this execVM ""sand_scripts\crate_gear\boxEOD.sqf""; this addAction [""EOD Box"",nil,nil,6,true,true,"""",""""];";
+			init="nul = this execVM ""sand_scripts\crate_gear\boxEOD.sqf""; this addAction [""Explosives"",nil,nil,6,true,true,"""",""""];";
 		};
 		class Item256
 		{
@@ -4993,7 +4993,7 @@ class Mission
 			vehicle="B_supplyCrate_F";
 			skill=0.60000002;
 			text="RSE3";
-			init="nul = this execVM ""sand_scripts\crate_gear\boxEOD.sqf""; this addAction [""EOD Box"",nil,nil,6,true,true,"""",""""];";
+			init="nul = this execVM ""sand_scripts\crate_gear\boxEOD.sqf""; this addAction [""Explosives"",nil,nil,6,true,true,"""",""""];";
 		};
 		class Item262
 		{
@@ -5029,7 +5029,7 @@ class Mission
 			vehicle="B_supplyCrate_F";
 			skill=1;
 			text="CHQ";
-			init="nul = this execVM ""sand_scripts\crate_gear\boxCHQ.sqf""; this addAction [""Company HQ"",nil,nil,6,true,true,"""",""""];";
+			init="nul = this execVM ""sand_scripts\crate_gear\boxCHQ.sqf""; this addAction [""Company Headquarters"",nil,nil,6,true,true,"""",""""];";
 		};
 		class Item265
 		{
@@ -5041,7 +5041,7 @@ class Mission
 			vehicle="B_supplyCrate_F";
 			skill=1;
 			text="CHE";
-			init="nul = this execVM ""sand_scripts\crate_gear\boxCHQE.sqf""; this addAction [""CHE"",nil,nil,6,true,true,"""",""""];";
+			init="nul = this execVM ""sand_scripts\crate_gear\boxCHQE.sqf""; this addAction [""Company Equipment"",nil,nil,6,true,true,"""",""""];";
 		};
 		class Item266
 		{
@@ -5053,7 +5053,7 @@ class Mission
 			vehicle="B_supplyCrate_F";
 			skill=1;
 			text="CHW";
-			init="nul = this execVM ""sand_scripts\crate_gear\boxCHW.sqf""; this addAction [""CHW"",nil,nil,6,true,true,"""",""""];";
+			init="nul = this execVM ""sand_scripts\crate_gear\boxCHW.sqf""; this addAction [""Heavy Weapons"",nil,nil,6,true,true,"""",""""];";
 		};
 		class Item267
 		{
@@ -5065,7 +5065,7 @@ class Mission
 			vehicle="B_supplyCrate_F";
 			skill=1;
 			text="CWA";
-			init="nul = this execVM ""sand_scripts\crate_gear\boxCWA.sqf""; this addAction [""CWA"",nil,nil,6,true,true,"""",""""];";
+			init="nul = this execVM ""sand_scripts\crate_gear\boxCWA.sqf""; this addAction [""Weapons Ammunition"",nil,nil,6,true,true,"""",""""];";
 		};
 		class Item268
 		{
