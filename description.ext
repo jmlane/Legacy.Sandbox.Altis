@@ -122,6 +122,14 @@ class CfgFunctions
 			class findAllGetPath {};
 		};
 	};
+	class MOSES
+	{
+		class BoxRestrictions
+		{
+			file = "functions";
+			class accessInfo {};
+		};
+	};
 };
 
 class CfgSounds {
