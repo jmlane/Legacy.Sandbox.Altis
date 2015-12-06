@@ -67,9 +67,7 @@ _tileSystemStatus = format ["
 		hint 'Tile System: Disabled';
 	};
 "];
-
 private ["_apOption1","_apOption2"];
-// comm_adminPanel define
 if ((toUpper str player) in (["OPS","BOS","ROS","A11","A12","A13","A21","A22","A23","A31","A32","A33","PS1","PS2","PS3","WSL","HQ5","BFS","RSM","PL1","PL2","PL3","HP2","HP3","HP1","HQ6","BXO","BPO","BLO","RXO","RCO"])) then {
 	comm_adminPanel = [player,"adminPanel",nil,nil,""] call BIS_fnc_addCommMenuItem;
 	if ((toUpper str player) in (["OPS","BOS","ROS","A11","A12","A13","A21","A22","A23","A31","A32","A33","PS1","PS2","PS3","WSL","HQ5","BFS","RSM","PL1","PL2","PL3","HP2","HP3","HP1","HQ6","BXO","BPO","BLO","RXO","RCO"])) then {
@@ -85,4 +83,17 @@ if ((toUpper str player) in (["OPS","BOS","ROS","A11","A12","A13","A21","A22","A
 		_apOption2
 	];
 	publicVariable "ADMIN_CONTROL";
+};
+
+// Radio Control --for Backups only
+_backupData = ([CHANNEL_BACKUPS, (str player)] call kk_fnc_findAll);
+if (!(count _backupData == 0)) then {
+	comm_radioControl = [player,"radioControl",nil,nil,""] call BIS_fnc_addCommMenuItem;
+	RADIO_CONTROL = [["Radio Control",false], [], [], [], [], []];
+	{ // forEach entry in the _backupData array:
+		_x deleteAt 2;	// Delete the last, and 2nd last index
+		_x deleteAt 1;
+		_chanName = ([CHANNELS, _x] call kk_fnc_findAllGetPath) select 0;	// Gets name of channel
+		[false, _chanName, player, (_x select 0)] call asg_fnc_RadioControl;	// exec radioControl function
+	} forEach _backupData;
 };

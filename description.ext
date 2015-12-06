@@ -65,7 +65,7 @@ class CfgFunctions
 			class teleport {};
 			class lockUnlock {};
 			class adminPanelLoad {};
-			// class moveIntoHouse {}; -- missing script file
+			class moveIntoHouse {};
 			class addRep {};
 			class megaAttack {};
 			class groupCountCheck {};
@@ -120,6 +120,12 @@ class CfgFunctions
 			file = "functions";
 			class findAll {};
 			class findAllGetPath {};
+		};
+	};
+	class ASG {
+		class radioFunctions {
+			file = "functions";
+			class radioControl {};
 		};
 	};
 };
@@ -177,6 +183,24 @@ class CfgCommunicationMenu {
         enable = "1"; 
         removeAfterExpressionCall = 0;
 	};
+};
+
+class CfgRemoteExec
+{
+        class Commands
+        {
+                mode = 2;
+
+                class setFuel {allowedTargets = 2;};           //execute only on server
+                class hint {jip = 0;};                         //jip is not allowed for this command
+        };
+        class Functions
+        {
+                mode = 2;
+                jip = 1;                                       //no functions can use jip
+
+                class BIS_fnc_addCommMenuItem {allowedTargets = 0;};   //execute only on clients, server execution denied
+        };
 };
 
 #include "defines.hpp"

@@ -14,6 +14,12 @@ if(time > 30 && player distance (getMarkerPos "Respawn_West") < 100 && myDeaths 
 	publicVariable "GV_Sand_Balance";
 };
 
+if (radio_backupStatus) exitWith {
+	{
+		[(radio_backupData select _forEachIndex select 0),(radio_backupData select _forEachIndex select 1),[player]] call RADIO;
+	} forEach radio_backupData;
+};
+
 /*
 
 if(time > 30) then

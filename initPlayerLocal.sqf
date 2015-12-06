@@ -92,10 +92,8 @@ player addAction ["Move Object",{[] call AUSMD_fnc_constructionMove;},nil,0.15,F
 player addAction ["Drop Object",{construction_object setVariable ["being_moved",false,true];detach construction_Object;construction_Building = false;construction_Object = objNull;hint "Object Placed.";player forceWalk false;},nil,0.15,False,True,"",' construction_building && alive player && vehicle player == player'];			
  */
  
-// Add Earplug Toggle to Comm Menu for all players.
-RADIO_CONTROL = [["Radio Control",false]];
+// Earplug Toggle
 comm_earplugToggle = [player,"earplugToggle",nil,nil,""] call BIS_fnc_addCommMenuItem;
-
 
 // Init the specialized commMenu.
 [] execVM "sand_scripts\sand_initCommMenu.sqf";
