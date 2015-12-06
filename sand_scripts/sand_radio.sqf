@@ -28,7 +28,7 @@ CHANNEL_BACKUPS = [
 [["A21A","A21B"],["A22A","A22B"],["A23A","A23B"],[],[],[],[]],	//Backup to 'Channel 2'
 [["A31A","A31B"],["A32A","A32B"],["A33A","A33B"],[],[],[],[]],	//Backup to 'Channel 3'
 [["HQ6","HQ4","HQ5"],["PL1","PS1","CM1"],["PL2","PS2","CM2"],["PL3","PS3","CM3"],[],[],[],[],[]],    //Backup to 'Channel 4'
-[[],["PL1","PS1","CM1"],["PL2","PS2","CM2"],["PL3","PS3","CM3"],[],[],[],[],[],[],[]]    //Backup to 'Channel 5'
+[["HQ6","HQ4","HQ5"],["PL1","PS1","CM1"],["PL2","PS2","CM2"],["PL3","PS3","CM3"],[],[],[],[],[],[],[]]    //Backup to 'Channel 5'
 ];
 
 ACTIVE_BACKUPS = [];	//active backups are stored here.
@@ -145,6 +145,51 @@ if isServer then { //Only do this if we are a server
         (_this select 1) call RADIO; //the publicvariabled value of PV__RADIO is passed to RADIO function on server
     };
     { [_x select 0,true,[],_x select 1] call RADIO } forEach CHANNELS; //Create all the channels from 'CHANNELS' array ready for players to be added to
+	
+	// HANDLE BACKUPS
+	// Diffusion9 2015-12-01
+	addMissionEventHandler ["HandleDisconnect",
+	{
+		_dcUnit = _this select 0;
+		_dcUnitStr = (toUpper str _dcUnit);
+		_primaryCheck = [CHANNEL_DATA, _dcUnitStr] call KK_fnc_findAll;
+		_idArray = [];
+		{_idArray pushback (_x select 0);} forEach _primaryCheck;
+		_backupArray = [];
+		{_backupArray pushback ([CHANNEL_BACKUPS, _x] call KK_fnc_findAllGetPath);} forEach _primaryCheck;
+		_chanNameArray = [];
+		{_chanNameArray pushback (CHANNELS select (_x select 0) select 0);} forEach _primaryCheck;
+		{
+			if ((count _x) > 0) then {
+				diag_log format ["RADIO: Backup Found: %1",_forEachindex];
+				_x2 = _forEachindex;
+				{
+					if (isPlayer (missionNamespace getVariable [_x,objNull])) exitWith {
+						_chanBackup = _x;
+						_chanName = (_chanNameArray select _x2);
+						_chanID = (_idArray select _x2);
+						_chanVarName = ("chan" + str ((_chanID) + 1));
+						_chanDescription = format ["Disconnect %1",(_chanName)];
+						_rcTarget = ((_chanID) + 1);
+						_playerVar = missionNamespace getVariable [_x,objNull];
+						_chanDisconnect = format ["
+						RADIO_CONTROL set [%1,null];
+						[false,""%2"",[%3]] call RADIO;
+						", _rcTarget, _chanName, _playerVar];
+						_chanData = [_chanDescription, [((_chanID) + 2)], "", -5, [["expression", _chanDisconnect]], "1", "1"];
+						missionNamespace setVariable [_chanVarName, _chanData];
+						[true,_chanName,[_playerVar]] call RADIO;
+						[format["[RADIO] %1 was added to %2 to replace %3", name _playerVar, _chanName, _this select 3],"systemChat",true] call BIS_fnc_MP;
+						RADIO_CONTROL set [_rcTarget, _chanData];
+						publicVariable "RADIO_CONTROL";
+						[_playerVar, "radioControl",nil,nil,""] remoteExec ["BIS_fnc_addCommMenuItem"];
+					};
+				} forEach _x;
+			} else {
+				diag_log format ["No Backup Available"];
+			};
+		} forEach _backupArray;
+	}];
 };
 
 if hasInterface then { //If not a dedicated server, do this
