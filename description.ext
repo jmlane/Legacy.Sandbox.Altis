@@ -65,7 +65,7 @@ class CfgFunctions
 			class teleport {};
 			class lockUnlock {};
 			class adminPanelLoad {};
-			// class moveIntoHouse {}; -- missing script file
+			class moveIntoHouse {};
 			class addRep {};
 			class megaAttack {};
 			class groupCountCheck {};
@@ -128,6 +128,12 @@ class CfgFunctions
 		{
 			file = "functions";
 			class accessInfo {};
+		};
+	};
+	class ASG {
+		class radioFunctions {
+			file = "functions";
+			class radioControl {};
 		};
 	};
 };

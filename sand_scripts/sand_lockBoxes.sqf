@@ -33,5 +33,5 @@ player addEventHandler ["InventoryOpened",{
             TRUE
         };
         FALSE
-    } forEach ([_this select 1] + (player nearSupplies 3))
+    } forEach ([_this select 1] + (player nearSupplies 2))
 }];
